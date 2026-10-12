@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KampusKita — Portal Akademik Demo</title>
+  <meta name="description" content="Portal kampus fiktif untuk latihan keamanan aplikasi web dengan data sintetis.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="KampusKita beranda"><span class="brand-mark">K</span><span>Kampus<span class="brand-light">Kita</span><small>PORTAL AKADEMIK DEMO</small></span></a>
+    <div class="top-actions"><span class="demo-pill"><i></i> DATA SINTETIS</span><button id="logoutBtn" class="button button-quiet hidden">Keluar</button></div>
+  </header>
+  <main>
+    <section id="loginView" class="login-layout">
+      <div class="hero-panel">
+        <div class="eyebrow">RUANG AKADEMIK DIGITAL</div>
+        <h1>Satu portal untuk<br><span>aktivitas kampus.</span></h1>
+        <p>Kelola pembelajaran, pantau nilai, kumpulkan tugas, dan terhubung dalam satu tempat.</p>
+        <div class="feature-list">
+          <div><span class="feature-icon">▦</span><span><b>Informasi akademik</b><small>Nilai dan aktivitas perkuliahan</small></span></div>
+          <div><span class="feature-icon">↥</span><span><b>Pengumpulan tugas</b><small>Simulasi unggah berkas</small></span></div>
+          <div><span class="feature-icon">◌</span><span><b>Diskusi kelas</b><small>Ruang komunikasi pembelajaran</small></span></div>
+        </div>
+        <div class="hero-foot">LINGKUNGAN LATIHAN · BUKAN PORTAL KAMPUS NYATA</div>
+      </div>
+      <div class="login-side">
+        <div class="login-card">
+          <div class="card-kicker">SELAMAT DATANG KEMBALI</div><h2>Masuk ke portal</h2><p class="muted">Gunakan salah satu akun latihan di bawah.</p>
+          <div class="mode-box"><div><b>Mode pengujian</b><small id="modeDescription">Validasi rentan aktif untuk demonstrasi.</small></div><label class="switch"><input id="secureToggle" type="checkbox"><span class="slider"></span></label></div>
+          <div id="modeTag" class="mode-tag vulnerable">MODE RENTAN · DEMO</div>
+          <form id="loginForm">
+            <label for="username">Nama pengguna</label><div class="input-wrap"><span>♙</span><input id="username" autocomplete="username" placeholder="Contoh: mahasiswa" required></div>
+            <label for="password">Kata sandi</label><div class="input-wrap"><span>⌑</span><input id="password" type="password" autocomplete="current-password" placeholder="Masukkan kata sandi" required><button id="showPassword" type="button" class="eye" aria-label="Tampilkan kata sandi">◉</button></div>
+            <div id="lockNotice" class="notice hidden"></div><button class="button button-primary full" type="submit">Masuk <span>→</span></button>
+          </form>
+          <div id="loginMessage" class="message hidden" role="status"></div>
+          <div class="accounts"><div class="accounts-head">AKUN LATIHAN <span>klik untuk isi otomatis</span></div><button class="account-row" data-user="mahasiswa" data-pass="mhs123"><span class="avatar blue">M</span><span><b>Mahasiswa</b><small>mahasiswa / mhs123</small></span><span class="account-arrow">↗</span></button><button class="account-row" data-user="dosen" data-pass="dsn123"><span class="avatar violet">D</span><span><b>Dosen</b><small>dosen / dsn123</small></span><span class="account-arrow">↗</span></button><button class="account-row" data-user="admin" data-pass="adm123"><span class="avatar orange">A</span><span><b>Admin</b><small>admin / adm123</small></span><span class="account-arrow">↗</span></button></div>
+        </div>
+        <p class="login-note">Demo keamanan web · Jangan gunakan kata sandi asli.</p>
+      </div>
+    </section>
+
+    <section id="appView" class="app-layout hidden">
+      <aside class="sidebar"><div class="side-user"><div id="userAvatar" class="avatar blue">M</div><div><b id="userName">Mahasiswa</b><small id="userRole">Mahasiswa</small></div></div><div class="side-label">MENU UTAMA</div><nav id="navMenu"><button class="nav-item active" data-page="overview">▦ <span>Ringkasan</span></button><button class="nav-item" data-page="grades">▤ <span>Nilai akademik</span></button><button class="nav-item" data-page="assignments">↥ <span>Tugas</span></button><button class="nav-item" data-page="discussion">◌ <span>Diskusi kelas</span></button><button class="nav-item hidden" data-page="manage">⚙ <span>Kelola akun</span></button></nav><div class="sidebar-foot"><span class="status-dot"></span> Server demo aktif<small>Semua data hanya simulasi</small></div></aside>
+      <div class="content-area"><div class="page-heading"><div><div class="eyebrow">PORTAL AKADEMIK / <span id="breadcrumb">RINGKASAN</span></div><h1 id="pageTitle">Ringkasan</h1><p id="pageSubtitle">Selamat datang di ruang akademikmu.</p></div><div class="date-chip">◷ <span id="todayDate"></span></div></div>
+        <div id="pageContent"></div>
+        <footer class="app-footer">KampusKita Demo <span>·</span> Untuk latihan keamanan web saja</footer>
+      </div>
+    </section>
+    <section class="lab-panel"><div class="lab-heading"><div><div class="eyebrow">LAB KEAMANAN WEB</div><h2>Area demonstrasi kerentanan</h2><p>Gunakan hanya input di portal fiktif ini. Hasil pengujian tidak mengakses database sungguhan.</p></div><span class="lab-badge">LOCAL SIMULATION</span></div><div class="lab-grid"><article class="lab-card"><div class="lab-number">01</div><div><h3>SQL Injection — Login</h3><p>Mode rentan menerima input yang mengubah logika autentikasi simulasi. Mode aman memeriksa akun dan kata sandi secara tepat.</p><code>' OR '1'='1</code></div></article><article class="lab-card"><div class="lab-number">02</div><div><h3>SQL Injection — Pencarian nilai</h3><p>Coba input pencarian khusus di halaman Nilai akademik. Pada mode rentan, simulasi akan menampilkan seluruh data nilai sintetis.</p><code>' OR '1'='1</code></div></article><article class="lab-card"><div class="lab-number">03</div><div><h3>Percobaan sandi tanpa batas</h3><p>Mode rentan tidak membatasi percobaan login. Mode aman mengunci percobaan sementara setelah 5 kegagalan.</p><code>Uji dengan akun latihan</code></div></article></div><div class="lab-disclaimer">ⓘ Ini merupakan demonstrasi perilaku rentan di sisi browser, bukan implementasi SQL atau layanan autentikasi nyata. Jangan gunakan untuk menguji situs pihak lain.</div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

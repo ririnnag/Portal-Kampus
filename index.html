@@ -48,7 +48,6 @@
         <footer class="app-footer">KampusKita Demo <span>·</span> Untuk latihan keamanan web saja</footer>
       </div>
     </section>
-    <section class="lab-panel"><div class="lab-heading"><div><div class="eyebrow">LAB KEAMANAN WEB</div><h2>Area demonstrasi kerentanan</h2><p>Gunakan hanya input di portal fiktif ini. Hasil pengujian tidak mengakses database sungguhan.</p></div><span class="lab-badge">LOCAL SIMULATION</span></div><div class="lab-grid"><article class="lab-card"><div class="lab-number">01</div><div><h3>SQL Injection — Login</h3><p>Mode rentan menerima input yang mengubah logika autentikasi simulasi. Mode aman memeriksa akun dan kata sandi secara tepat.</p><code>' OR '1'='1</code></div></article><article class="lab-card"><div class="lab-number">02</div><div><h3>SQL Injection — Pencarian nilai</h3><p>Coba input pencarian khusus di halaman Nilai akademik. Pada mode rentan, simulasi akan menampilkan seluruh data nilai sintetis.</p><code>' OR '1'='1</code></div></article><article class="lab-card"><div class="lab-number">03</div><div><h3>Percobaan sandi tanpa batas</h3><p>Mode rentan tidak membatasi percobaan login. Mode aman mengunci percobaan sementara setelah 5 kegagalan.</p><code>Uji dengan akun latihan</code></div></article></div><div class="lab-disclaimer">ⓘ Ini merupakan demonstrasi perilaku rentan di sisi browser, bukan implementasi SQL atau layanan autentikasi nyata. Jangan gunakan untuk menguji situs pihak lain.</div></section>
   </main>
   <script src="app.js"></script>
 </body>
